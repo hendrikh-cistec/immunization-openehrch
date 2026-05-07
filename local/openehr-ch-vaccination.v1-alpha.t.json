@@ -4,7 +4,10 @@
   "description" : {
     "@type" : "RESOURCE_DESCRIPTION",
     "originalAuthor" : {
-      "date" : "2026-05-07"
+      "date" : "2026-05-07",
+      "name" : "Hendrik Heiser",
+      "organisation" : "CISTEC AG",
+      "email" : "hendrik.heiser@cistec.com"
     },
     "otherContributors" : [ ],
     "lifecycleState" : {
