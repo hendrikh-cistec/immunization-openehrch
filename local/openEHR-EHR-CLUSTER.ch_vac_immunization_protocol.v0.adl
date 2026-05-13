@@ -31,7 +31,7 @@ description
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
 		["references"] = <"https://www.fhir.ch/ig/ch-vacd/StructureDefinition-ch-vacd-immunization.html">
-		["MD5-CAM-1.0.1"] = <"0ec2c86a56a4e8fc3d60d3d66b7239eb">
+		["MD5-CAM-1.0.1"] = <"b59e26f45f296f5f167462a58b67d29a">
 		["build_uid"] = <"836e0c9b-492a-384e-b0e5-1789d04d5df7">
 	>
 
@@ -41,15 +41,6 @@ definition
 			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Target disease
 				value matches {
 					DV_TEXT matches {*}
-				}
-			}
-			ELEMENT[at0004] occurrences matches {0..1} matches {    -- DV_CODED_TEXT
-				value matches {
-					DV_CODED_TEXT matches {
-						defining_code matches {
-							[ac0000]
-						}
-					}
 				}
 			}
 		}
@@ -68,21 +59,12 @@ ontology
 					text = <"Target disease">
 					description = <"The vaccine-preventable disease or condition targeted by the vaccination protocol, according to the CH VACD target disease value set.
 
-FHIR Immunization.protocolApplied.targetDisease.">
+This data element should be constrained to DV_CODED_TEXT in a template and bound to the CH VACD target disease value set, where possible.
+
+FHIR mapping: Immunization.protocolApplied.targetDisease.">
 					comment = <"FHIR terminology binding to the CH VACD target diseases and illnesses undergone for immunization value set. Expansion via tx.fhir.ch:
 https://tx.fhir.ch/r4/ValueSet/$expand?url=http://fhir.ch/ig/ch-vacd/ValueSet/ch-vacd-targetdiseasesandillnessesundergoneforimmunization-vs&_format=json.">
 				>
-				["at0004"] = <
-					text = <"DV_CODED_TEXT">
-					description = <"">
-				>
-			>
-		>
-	>
-	constraint_bindings = <
-		["CH VACD Target disease and illnesses undergone for immunization"] = <
-			items = <
-				["ac0000"] = <terminology://fhir.hl7.org/ValueSet/$expand?url=http://fhir.ch/ig/ch-vacd/ValueSet/ch-vacd-targetdiseasesandillnessesundergoneforimmunization-vs>
 			>
 		>
 	>
