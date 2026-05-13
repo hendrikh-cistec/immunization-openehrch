@@ -31,7 +31,7 @@ description
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
 		["references"] = <"https://www.fhir.ch/ig/ch-vacd/StructureDefinition-ch-vacd-immunization.html">
-		["MD5-CAM-1.0.1"] = <"033d1a21855828071fb6fd9770481e0d">
+		["MD5-CAM-1.0.1"] = <"16905818c81014a8f3190b749a6ad5b7">
 		["build_uid"] = <"836e0c9b-492a-384e-b0e5-1789d04d5df7">
 	>
 
@@ -50,7 +50,7 @@ definition
 							DV_BOOLEAN matches {*}
 						}
 					}
-					ELEMENT[at0008] occurrences matches {0..1} matches {    -- Reason for subpotency
+					ELEMENT[at0008] occurrences matches {0..*} matches {    -- Reason for subpotency
 						value matches {
 							DV_TEXT matches {*}
 						}
