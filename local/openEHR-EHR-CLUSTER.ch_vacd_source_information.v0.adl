@@ -31,7 +31,7 @@ description
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
 		["references"] = <"https://www.fhir.ch/ig/ch-vacd/StructureDefinition-ch-vacd-immunization.html">
-		["MD5-CAM-1.0.1"] = <"09a25619e046e3b36585fc163b6b7d15">
+		["MD5-CAM-1.0.1"] = <"a979d4855f71976c405af72fdb5d6200">
 		["build_uid"] = <"44aef6de-44dd-3bc0-8730-ebad8dc39a17">
 	>
 
@@ -46,6 +46,20 @@ definition
 			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Verification Status
 				value matches {
 					DV_TEXT matches {*}
+				}
+			}
+			CLUSTER[at0003] occurrences matches {0..1} matches {    -- Source data details
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0004] occurrences matches {0..1} matches {    -- Occurrence data absent reason
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0005] occurrences matches {0..1} matches {    -- Source recorded date
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
 				}
 			}
 		}
@@ -73,6 +87,27 @@ https://tx.fhir.ch/r4/ValueSet/$expand?url=http://fhir.ch/ig/ch-vacd/ValueSet/ch
 					comment = <"This data element represents the business identifier of the source Immunization resource. It should be distinguished from the FHIR logical resource id, which is mapped separately from Immunization.id if required. The identifier may be used for traceability, matching, deduplication or reconciliation of imported CH VACD immunization entries.
 
 FHIR mapping: Immunization.identifier.">
+				>
+				["at0003"] = <
+					text = <"Source data details">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Occurrence data absent reason">
+					description = <"Reason why the structured vaccination administration date or time is absent from the source data.
+
+This data element should be constrained to DV_CODED_TEXT in a template and bound to the HL7 FHIR Data Absent Reason value set, where possible. It describes why the structured administration date or time is missing and must not be used as the vaccination administration time.
+
+FHIR mapping: Immunization.occurrenceDateTime.extension:data-absent-reason.valueCode.">
+					comment = <"FHIR terminology binding to the HL7 FHIR Data Absent Reason value set. Expansion via tx.fhir.ch:
+https://tx.fhir.ch/r4/ValueSet/$expand?url=http://hl7.org/fhir/ValueSet/data-absent-reason&_format=json">
+				>
+				["at0005"] = <
+					text = <"Source recorded date">
+					description = <"Date and time when the source CH VACD immunization entry was first recorded in the source system.">
+					comment = <"This is the recording time of the source immunization entry, not the vaccination administration time and not the openEHR commit time.
+
+FHIR mapping: Immunization.recorded.">
 				>
 			>
 		>
