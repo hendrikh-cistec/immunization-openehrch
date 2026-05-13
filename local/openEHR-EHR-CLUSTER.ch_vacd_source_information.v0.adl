@@ -9,10 +9,10 @@ language
 
 description
 	original_author = <
+		["date"] = <"2026-05-13">
 		["name"] = <"Jean-Pierre Messerli">
 		["organisation"] = <"JPM Consulting GmbH">
 		["email"] = <"jean-pierre.messerli@jpm-consulting.ch">
-		["date"] = <"2026-05-13">
 	>
 	lifecycle_state = <"unmanaged">
 	details = <
@@ -27,11 +27,11 @@ description
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"https://www.fhir.ch/ig/ch-vacd/StructureDefinition-ch-vacd-immunization.html">
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["references"] = <"https://www.fhir.ch/ig/ch-vacd/StructureDefinition-ch-vacd-immunization.html">
-		["MD5-CAM-1.0.1"] = <"a979d4855f71976c405af72fdb5d6200">
+		["MD5-CAM-1.0.1"] = <"1f2a5b65d45eeba6389cbd32549741b8">
 		["build_uid"] = <"44aef6de-44dd-3bc0-8730-ebad8dc39a17">
 	>
 
@@ -43,7 +43,7 @@ definition
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Verification Status
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Verification status
 				value matches {
 					DV_TEXT matches {*}
 				}
@@ -74,7 +74,7 @@ ontology
 					description = <"Source, provenance, verification and data-quality information associated with CH VACD immunization data.">
 				>
 				["at0001"] = <
-					text = <"Verification Status">
+					text = <"Verification status">
 					description = <"The verification status of the CH VACD immunization source information, indicating whether the immunization entry has been verified. This field is mandatory in the CH VACD Immunization profile.
 
 FHIR mapping: Immunization.extension:verificationStatus.">
