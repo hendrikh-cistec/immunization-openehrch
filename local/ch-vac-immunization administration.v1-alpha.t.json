@@ -22,9 +22,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "4.0.0",
+      "sem_ver" : "4.1.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "2d732b10cba036c97fe78fcdb0147437",
+      "MD5-CAM-1.0.1" : "9ffcd26db9dd70ff1d0465c970ea0fd5",
       "PARENT:MD5-CAM-1.0.1" : "3B0765A6B395C9D01595FDF2D440E6CB"
     },
     "details" : {
@@ -2251,7 +2251,6 @@
             "children" : [ {
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "ELEMENT",
-              "occurrences" : "0..0",
               "nodeId" : "at0103.1",
               "attributes" : [ {
                 "@type" : "C_ATTRIBUTE",
@@ -2329,6 +2328,13 @@
             "text" : "Vaccine administered",
             "description" : "Name of the medication, vaccine or other therapeutic/prescribable item which was the focus of the activity.",
             "comment" : "FHIR terminology binding to the CH VACD Swissmedic vaccine value set. Expansion via tx.fhir.ch:\nhttps://tx.fhir.ch/r4/ValueSet/$expand?url=http://fhir.ch/ig/ch-vacd/ValueSet/ch-vacd-swissmedic-vaccines-vs&_format=json"
+          },
+          "at0103.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0103.1",
+            "text" : "Vaccination protocol",
+            "description" : "Unique identifier for the medication order.",
+            "comment" : "Comment: This data element allows for multiple occurrences to be defined more explicitly at run-time, if required."
           }
         },
         "nb" : { },
@@ -3615,7 +3621,6 @@
         }, {
           "@type" : "C_COMPLEX_OBJECT",
           "rmTypeName" : "ELEMENT",
-          "occurrences" : "0..0",
           "nodeId" : "at0071.1",
           "attributes" : [ ],
           "attributeTuples" : [ ]
@@ -3655,6 +3660,7 @@
         }, {
           "@type" : "C_COMPLEX_OBJECT",
           "rmTypeName" : "CLUSTER",
+          "occurrences" : "0..0",
           "nodeId" : "at0152.1",
           "attributes" : [ ],
           "attributeTuples" : [ ]
