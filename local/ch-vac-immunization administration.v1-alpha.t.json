@@ -22,9 +22,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "0.2.0",
+      "sem_ver" : "0.3.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "fda3ed0250e341f59ea11db941092ca9",
+      "MD5-CAM-1.0.1" : "7f01ba7973c8d2e5efc17e079f67fd42",
       "PARENT:MD5-CAM-1.0.1" : "3B0765A6B395C9D01595FDF2D440E6CB"
     },
     "details" : {
@@ -268,7 +268,7 @@
         "at0000.1" : {
           "@type" : "ARCHETYPE_TERM",
           "code" : "at0000.1",
-          "text" : "Vaccination with ACTION.medication",
+          "text" : "CH VACD Immunization administration",
           "description" : "Interaction, contact or care event between a subject of care and healthcare provider(s)."
         }
       },
