@@ -22,9 +22,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "1.0.1",
+      "sem_ver" : "2.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "8c71e23881e63d7f94abf119c3ba4a93",
+      "MD5-CAM-1.0.1" : "7b849defc3b453f1de78c439f74aa8c9",
       "PARENT:MD5-CAM-1.0.1" : "3B0765A6B395C9D01595FDF2D440E6CB"
     },
     "details" : {
@@ -2101,7 +2101,30 @@
                   "@type" : "C_COMPLEX_OBJECT",
                   "rmTypeName" : "ELEMENT",
                   "nodeId" : "at0141.1",
-                  "attributes" : [ ],
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "value",
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "DV_CODED_TEXT",
+                      "occurrences" : "1..1",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "defining_code",
+                        "children" : [ {
+                          "@type" : "C_TERMINOLOGY_CODE",
+                          "rmTypeName" : "TERMINOLOGY_CODE",
+                          "occurrences" : "0..1",
+                          "terminologyId" : {
+                            "value" : "CodesForImmunizationSiteOfAdministration"
+                          },
+                          "constraint" : [ "ac0.2" ],
+                          "selectedTerminologies" : [ "CodesForImmunizationSiteOfAdministration" ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
                   "attributeTuples" : [ ]
                 }, {
                   "@type" : "C_COMPLEX_OBJECT",
@@ -2217,6 +2240,13 @@
             "description" : "Unique identifier for the medication order.",
             "comment" : "Comment: This data element allows for multiple occurrences to be defined more explicitly at run-time, if required."
           },
+          "at0141.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0141",
+            "text" : "Body site",
+            "description" : "Structured description of the site of administration of the ordered item.\n",
+            "comment" : "FHIR terminology binding to the HL7 FHIR immunization site value set. Expansion via tx.fhir.ch:\nhttps://tx.fhir.ch/r4/ValueSet/$expand?url=http://hl7.org/fhir/ValueSet/immunization-site&_format=json"
+          },
           "at0020.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0020.1",
@@ -2236,6 +2266,9 @@
       "termBindings" : {
         "SwissMedicVaccines" : {
           "ac0.1" : "terminology://fhir.hl7.org/ValueSet/$expand?url=http://fhir.ch/ig/ch-vacd/ValueSet/ch-vacd-swissmedic-vaccines-vs"
+        },
+        "CodesForImmunizationSiteOfAdministration" : {
+          "ac0.2" : "terminology://fhir.hl7.org/ValueSet/$expand?url=http://hl7.org/fhir/ValueSet/immunization-site"
         }
       },
       "terminologyExtracts" : { },
@@ -3477,12 +3510,14 @@
         "children" : [ {
           "@type" : "C_COMPLEX_OBJECT",
           "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
           "nodeId" : "at0132.1",
           "attributes" : [ ],
           "attributeTuples" : [ ]
         }, {
           "@type" : "C_COMPLEX_OBJECT",
           "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
           "nodeId" : "at0071.1",
           "attributes" : [ ],
           "attributeTuples" : [ ]
@@ -3631,7 +3666,21 @@
       "@type" : "ARCHETYPE_TERMINOLOGY",
       "conceptCode" : "at0000",
       "termDefinitions" : {
-        "en" : { },
+        "en" : {
+          "at0150.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0150.1",
+            "text" : "Lot number",
+            "description" : "The identifier assigned to the production batch by the manufacturer during production."
+          },
+          "at0003.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003.1",
+            "text" : "Expiration date",
+            "description" : "The expiry date and/or time of the medication or medication component, as given by the manufacturer or individual preparing the mixture.",
+            "comment" : "Any other form of expiry date, such as time from production or depending on storage environment, can be inserted using a specific CLUSTER archetype in the Substance Details slot or added as part of the Description.\r\n For example: '2017-05-23'."
+          }
+        },
         "nb" : { },
         "pt" : { },
         "de" : { },
