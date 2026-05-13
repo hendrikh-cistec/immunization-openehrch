@@ -31,16 +31,30 @@ description
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
 		["references"] = <"https://www.fhir.ch/ig/ch-vacd/StructureDefinition-ch-vacd-immunization.html">
-		["MD5-CAM-1.0.1"] = <"b59e26f45f296f5f167462a58b67d29a">
+		["MD5-CAM-1.0.1"] = <"033d1a21855828071fb6fd9770481e0d">
 		["build_uid"] = <"836e0c9b-492a-384e-b0e5-1789d04d5df7">
 	>
 
 definition
-	CLUSTER[at0000] matches {    -- CH VACD immunization protocol
+	CLUSTER[at0000] occurrences matches {0..1} matches {    -- CH VACD immunization protocol
 		items cardinality matches {1..*; unordered} matches {
-			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Target disease
+			ELEMENT[at0003] occurrences matches {0..*} matches {    -- Target disease
 				value matches {
 					DV_TEXT matches {*}
+				}
+			}
+			CLUSTER[at0006] occurrences matches {0..1} matches {    -- Dose potency
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0007] occurrences matches {0..1} matches {    -- Subpotent dose
+						value matches {
+							DV_BOOLEAN matches {*}
+						}
+					}
+					ELEMENT[at0008] occurrences matches {0..1} matches {    -- Reason for subpotency
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
 				}
 			}
 		}
@@ -64,6 +78,26 @@ This data element should be constrained to DV_CODED_TEXT in a template and bound
 FHIR mapping: Immunization.protocolApplied.targetDisease.">
 					comment = <"FHIR terminology binding to the CH VACD target diseases and illnesses undergone for immunization value set. Expansion via tx.fhir.ch:
 https://tx.fhir.ch/r4/ValueSet/$expand?url=http://fhir.ch/ig/ch-vacd/ValueSet/ch-vacd-targetdiseasesandillnessesundergoneforimmunization-vs&_format=json.">
+				>
+				["at0006"] = <
+					text = <"Dose potency">
+					description = <"Details about whether the administered vaccine dose is considered to have reduced potency or effectiveness.">
+				>
+				["at0007"] = <
+					text = <"Subpotent dose">
+					description = <"Indicates whether the administered vaccine dose is considered to be subpotent.
+
+FHIR mapping: Immunization.isSubpotent.">
+				>
+				["at0008"] = <
+					text = <"Reason for subpotency">
+					description = <"The reason why the administered vaccine dose is considered to be subpotent.
+
+This data element should be coded with a terminology in a template, where possible.
+
+FHIR mapping: Immunization.subpotentReason.">
+					comment = <"FHIR terminology binding to the HL7 FHIR immunization subpotent reason value set. Expansion via tx.fhir.ch:
+https://tx.fhir.ch/r4/ValueSet/$expand?url=http://hl7.org/fhir/ValueSet/immunization-subpotent-reason&_format=json">
 				>
 			>
 		>
