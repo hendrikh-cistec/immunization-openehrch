@@ -22,9 +22,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "0.6.0",
+      "sem_ver" : "0.7.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "e00e9975b8b495e907b015d877335071",
+      "MD5-CAM-1.0.1" : "58a1f90acac4af139663dfb2410da4aa",
       "PARENT:MD5-CAM-1.0.1" : "3B0765A6B395C9D01595FDF2D440E6CB"
     },
     "details" : {
@@ -4068,7 +4068,7 @@
     "translations" : [ ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "2a130252-e168-49c1-bbd3-00e609ae1df4",
+    "uid" : "48f48ee3-30d8-4b86-b228-6ee46ef710d3",
     "description" : {
       "@type" : "RESOURCE_DESCRIPTION",
       "originalAuthor" : { },
@@ -4077,25 +4077,9 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "a979d4855f71976c405af72fdb5d6200"
+        "PARENT:MD5-CAM-1.0.1" : "1f2a5b65d45eeba6389cbd32549741b8"
       },
-      "details" : {
-        "en" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "en"
-          },
-          "purpose" : "To record CH VACD-specific information about the origin, provenance, verification and data quality of immunization-related source data.",
-          "keywords" : [ "immunization, vaccination, CH-VACD" ],
-          "use" : "Use to record source-related information when representing CH VACD immunization data in openEHR. This cluster is intended to be used where information about the origin, trustworthiness, verification, traceability or completeness of source data needs to be represented in a structured and queryable form. When used within ACTION.medication, the information should refer to the specific immunization entry represented by that ACTION. When used at Composition context level, the information should refer to the source document or source context as a whole. The cluster may be constrained in templates according to the requirements of a specific CH VACD implementation.",
-          "misuse" : "Not to be used to record the clinical content of the vaccination administration itself, such as the administered vaccine, administration time, route, anatomical administration site, administered quantity or product details. Use appropriate clinical ACTION and CLUSTER archetypes for these data. Not to be used as a replacement for feeder_audit when the complete original source content needs to be retained. Use feeder_audit or another agreed provenance mechanism to preserve the original source data. Not to be used for information that clearly belongs to the general Composition context, unless the cluster is intentionally placed at Composition context level and the scope is document-wide rather than entry-specific.",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        }
-      }
+      "details" : { }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.ch_vacd_source_information.v0",
     "differential" : true,
@@ -4111,12 +4095,6 @@
         "@type" : "C_ATTRIBUTE",
         "rmAttributeName" : "items",
         "children" : [ {
-          "@type" : "C_COMPLEX_OBJECT",
-          "rmTypeName" : "ELEMENT",
-          "nodeId" : "at0002.1",
-          "attributes" : [ ],
-          "attributeTuples" : [ ]
-        }, {
           "@type" : "C_COMPLEX_OBJECT",
           "rmTypeName" : "ELEMENT",
           "nodeId" : "at0001.1",
