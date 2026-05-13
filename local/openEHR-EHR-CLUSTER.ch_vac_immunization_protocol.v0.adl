@@ -19,7 +19,7 @@ description
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To record protocol-related CH VACD information for a vaccine administration, including target disease, vaccination series and planned series doses.">
-			keywords = <"Immunization, CH-VACD, protocol", ...>
+			keywords = <"immunization, vaccination, CH-VACD, protocol", ...>
 			use = <"Use within ACTION.medication when it represents one administered vaccine dose. This cluster records CH VACD protocol information derived from FHIR Immunization.protocolApplied, such as targetDisease, series and seriesDoses[x].">
 			misuse = <"Not to be used for vaccine product details, administered dose quantity, route, anatomical administration site, batch number, expiry date, manufacturer, source metadata, verification status or adverse reactions. Use appropriate ACTION, CLUSTER or feeder_audit structures for these data.">
 		>
