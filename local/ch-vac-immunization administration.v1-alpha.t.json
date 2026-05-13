@@ -22,9 +22,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "2.0.0",
+      "sem_ver" : "3.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "7b849defc3b453f1de78c439f74aa8c9",
+      "MD5-CAM-1.0.1" : "f417cfcd465c09592a0b28c61ea1b410",
       "PARENT:MD5-CAM-1.0.1" : "3B0765A6B395C9D01595FDF2D440E6CB"
     },
     "details" : {
@@ -2095,7 +2095,30 @@
                   "@type" : "C_COMPLEX_OBJECT",
                   "rmTypeName" : "ELEMENT",
                   "nodeId" : "at0147.1",
-                  "attributes" : [ ],
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "value",
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "DV_CODED_TEXT",
+                      "occurrences" : "1..1",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "defining_code",
+                        "children" : [ {
+                          "@type" : "C_TERMINOLOGY_CODE",
+                          "rmTypeName" : "TERMINOLOGY_CODE",
+                          "occurrences" : "0..1",
+                          "terminologyId" : {
+                            "value" : "RouteOfAdministrationImmunization"
+                          },
+                          "constraint" : [ "ac0.3" ],
+                          "selectedTerminologies" : [ "RouteOfAdministrationImmunization" ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
                   "attributeTuples" : [ ]
                 }, {
                   "@type" : "C_COMPLEX_OBJECT",
@@ -2240,6 +2263,13 @@
             "description" : "Unique identifier for the medication order.",
             "comment" : "Comment: This data element allows for multiple occurrences to be defined more explicitly at run-time, if required."
           },
+          "at0147.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0147",
+            "text" : "Route",
+            "description" : "The route by which the ordered item was, or is to be, administered into the subject's body.",
+            "comment" : "FHIR terminology binding to the CH VACD route of administration value set. Expansion via tx.fhir.ch:\nhttps://tx.fhir.ch/r4/ValueSet/$expand?url=http://fhir.ch/ig/ch-vacd/ValueSet/ch-vacd-route-of-administration-vs&_format=json"
+          },
           "at0141.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0141",
@@ -2269,6 +2299,9 @@
         },
         "CodesForImmunizationSiteOfAdministration" : {
           "ac0.2" : "terminology://fhir.hl7.org/ValueSet/$expand?url=http://hl7.org/fhir/ValueSet/immunization-site"
+        },
+        "RouteOfAdministrationImmunization" : {
+          "ac0.3" : "terminology://fhir.hl7.org/ValueSet/$expand?url=http://fhir.ch/ig/ch-vacd/ValueSet/ch-vacd-route-of-administration-vs"
         }
       },
       "terminologyExtracts" : { },
