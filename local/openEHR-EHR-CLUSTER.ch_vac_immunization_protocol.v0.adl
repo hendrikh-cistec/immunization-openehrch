@@ -18,17 +18,10 @@ description
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To record CH VACD-specific protocol information associated with a vaccine administration, including the disease or condition targeted by the vaccination protocol, the vaccination series, and the planned number of doses in the series.">
-			use = <"Use to record protocol-related information for a specific administered vaccination when representing Swiss CH VACD immunization data in openEHR.
-
-This cluster is intended to be nested within the Protocol section of ACTION.medication, where ACTION.medication represents one administered vaccine dose. It may be used to record the target disease, vaccination series, and recommended total number of doses for the vaccination series.
-
-Use this cluster for information derived from FHIR Immunization.protocolApplied, including targetDisease, series and seriesDoses[x]. Where a numeric dose number is available, it may be represented in ACTION.medication as the sequence number of the administered dose. Where only a textual dose number is available, it may be represented in this cluster as text.">
-			misuse = <"Not to be used to record the administered vaccine product, batch number, expiry date, manufacturer, administered dose quantity, route or anatomical administration site. Use ACTION.medication, CLUSTER.medication or CLUSTER.dosage for these data.
-
-Not to be used to record source document metadata, verification status, recorder information, primary source, report origin or data-absent-reason. Use a dedicated CH VACD source/provenance cluster or feeder_audit for these data.
-
-Not to be used to record adverse reactions, contraindications, risk factors or past vaccine-preventable diseases. Use appropriate archetypes for adverse reaction, problem/diagnosis, condition or risk factor information.">
+			purpose = <"To record protocol-related CH VACD information for a vaccine administration, including target disease, vaccination series and planned series doses.">
+			keywords = <"Immunization, CH-VACD, protocol", ...>
+			use = <"Use within ACTION.medication when it represents one administered vaccine dose. This cluster records CH VACD protocol information derived from FHIR Immunization.protocolApplied, such as targetDisease, series and seriesDoses[x].">
+			misuse = <"Not to be used for vaccine product details, administered dose quantity, route, anatomical administration site, batch number, expiry date, manufacturer, source metadata, verification status or adverse reactions. Use appropriate ACTION, CLUSTER or feeder_audit structures for these data.">
 		>
 	>
 	other_details = <
@@ -38,33 +31,58 @@ Not to be used to record adverse reactions, contraindications, risk factors or p
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
 		["references"] = <"https://www.fhir.ch/ig/ch-vacd/StructureDefinition-ch-vacd-immunization.html">
-		["MD5-CAM-1.0.1"] = <"e162163ce17281e804ab743cad6b63d4">
+		["MD5-CAM-1.0.1"] = <"0ec2c86a56a4e8fc3d60d3d66b7239eb">
 		["build_uid"] = <"836e0c9b-492a-384e-b0e5-1789d04d5df7">
 	>
 
 definition
 	CLUSTER[at0000] matches {    -- CH VACD immunization protocol
 		items cardinality matches {1..*; unordered} matches {
-			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Target disease
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Target disease
 				value matches {
-					DV_CODED_TEXT matches {*}
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {    -- DV_CODED_TEXT
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[ac0000]
+						}
+					}
 				}
 			}
 		}
 	}
 
 ontology
+	terminologies_available = <"CH VACD Target disease and illnesses undergone for immunization", ...>
 	term_definitions = <
 		["en"] = <
 			items = <
 				["at0000"] = <
 					text = <"CH VACD immunization protocol">
-					description = <"CH VACD-specific protocol details for an immunization event, including the target disease, vaccination series and dose-series information associated with an administered vaccine.">
+					description = <"CH VACD-specific protocol details for an administered vaccination.">
 				>
-				["at0001"] = <
+				["at0003"] = <
 					text = <"Target disease">
+					description = <"The vaccine-preventable disease or condition targeted by the vaccination protocol, according to the CH VACD target disease value set.
+
+FHIR Immunization.protocolApplied.targetDisease.">
+					comment = <"FHIR terminology binding to the CH VACD target diseases and illnesses undergone for immunization value set. Expansion via tx.fhir.ch:
+https://tx.fhir.ch/r4/ValueSet/$expand?url=http://fhir.ch/ig/ch-vacd/ValueSet/ch-vacd-targetdiseasesandillnessesundergoneforimmunization-vs&_format=json.">
+				>
+				["at0004"] = <
+					text = <"DV_CODED_TEXT">
 					description = <"">
 				>
+			>
+		>
+	>
+	constraint_bindings = <
+		["CH VACD Target disease and illnesses undergone for immunization"] = <
+			items = <
+				["ac0000"] = <terminology://fhir.hl7.org/ValueSet/$expand?url=http://fhir.ch/ig/ch-vacd/ValueSet/ch-vacd-targetdiseasesandillnessesundergoneforimmunization-vs>
 			>
 		>
 	>
