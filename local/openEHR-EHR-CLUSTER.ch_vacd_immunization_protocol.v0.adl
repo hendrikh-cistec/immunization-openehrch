@@ -31,12 +31,12 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"0e6f44101d185088322e8b5a91be24cb">
+		["MD5-CAM-1.0.1"] = <"9e391f6e90dc0d88b1552fb4c6bd3ded">
 		["build_uid"] = <"836e0c9b-492a-384e-b0e5-1789d04d5df7">
 	>
 
 definition
-	CLUSTER[at0000] occurrences matches {0..1} matches {    -- ch_vacd_immunization_protocol
+	CLUSTER[at0000] occurrences matches {0..1} matches {    -- CH VACD immunization protocol
 		items cardinality matches {1..*; unordered} matches {
 			ELEMENT[at0003] occurrences matches {0..*} matches {    -- Target disease
 				value matches {
@@ -65,7 +65,7 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"ch_vacd_immunization_protocol">
+					text = <"CH VACD immunization protocol">
 					description = <"CH VACD-specific protocol details for an administered vaccination.">
 				>
 				["at0003"] = <
