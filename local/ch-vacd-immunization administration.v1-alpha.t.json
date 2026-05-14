@@ -24,7 +24,7 @@
       "custodian_namespace" : "",
       "sem_ver" : "0.9.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "f5292245daea23fb0b4b4c8c5624d6b4",
+      "MD5-CAM-1.0.1" : "c082021d8c2d6d842c839b6f77b0b7ea",
       "PARENT:MD5-CAM-1.0.1" : "3B0765A6B395C9D01595FDF2D440E6CB"
     },
     "details" : {
@@ -3932,7 +3932,7 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "1f2a5b65d45eeba6389cbd32549741b8"
+        "PARENT:MD5-CAM-1.0.1" : "95f6f2d70981602b567483fe79cb81df"
       },
       "details" : {
         "en" : {
@@ -4080,7 +4080,23 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "0e6f44101d185088322e8b5a91be24cb"
       },
-      "details" : { }
+      "details" : {
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record protocol-related CH VACD information for a vaccine administration, including target disease, vaccination series and planned series doses.",
+          "keywords" : [ "immunization, vaccination, CH-VACD, protocol" ],
+          "use" : "Use within ACTION.medication when it represents one administered vaccine dose. This cluster records CH VACD protocol information derived from FHIR Immunization.protocolApplied, such as targetDisease, series and seriesDoses[x].",
+          "misuse" : "Not to be used for vaccine product details, administered dose quantity, route, anatomical administration site, batch number, expiry date, manufacturer, source metadata, verification status or adverse reactions. Use appropriate ACTION, CLUSTER or feeder_audit structures for these data.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.ch_vacd_immunization_protocol.v0",
     "differential" : true,
