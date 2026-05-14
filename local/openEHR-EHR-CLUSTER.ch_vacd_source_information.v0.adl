@@ -31,7 +31,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"1f2a5b65d45eeba6389cbd32549741b8">
+		["MD5-CAM-1.0.1"] = <"95f6f2d70981602b567483fe79cb81df">
 		["build_uid"] = <"44aef6de-44dd-3bc0-8730-ebad8dc39a17">
 	>
 
@@ -40,7 +40,7 @@ definition
 		items cardinality matches {1..*; unordered} matches {
 			ELEMENT[at0002] occurrences matches {0..*} matches {    -- Source immunization identifier
 				value matches {
-					DV_TEXT matches {*}
+					DV_IDENTIFIER matches {*}
 				}
 			}
 			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Verification status
