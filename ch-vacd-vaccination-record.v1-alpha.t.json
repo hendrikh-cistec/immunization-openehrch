@@ -22,9 +22,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "3.1.0",
+      "sem_ver" : "3.2.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "f1a3be5f2f7e8a410b13c61e7782b986",
+      "MD5-CAM-1.0.1" : "46ee62b6e77c9d1635e226369b7f79d7",
       "PARENT:MD5-CAM-1.0.1" : "F2C3BD9252691BB3975C53648208D672"
     },
     "details" : {
@@ -1875,7 +1875,7 @@
             }, {
               "@type" : "C_ARCHETYPE_ROOT",
               "rmTypeName" : "CLUSTER",
-              "occurrences" : "0..1",
+              "occurrences" : "0..*",
               "nodeId" : "at0053.1",
               "attributes" : [ ],
               "attributeTuples" : [ ],
@@ -1984,6 +1984,13 @@
             "text" : "Body site",
             "description" : "Structured description of the site of administration of the ordered item.",
             "comment" : "FHIR terminology binding to the HL7 FHIR immunization site value set. Expansion via tx.fhir.ch:\nhttps://tx.fhir.ch/r4/ValueSet/$expand?url=http://hl7.org/fhir/ValueSet/immunization-site&_format=json"
+          },
+          "at0103.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0103.1",
+            "text" : "Vaccination protocol",
+            "description" : "Unique identifier for the medication order.",
+            "comment" : "Comment: This data element allows for multiple occurrences to be defined more explicitly at run-time, if required."
           }
         },
         "nb" : { },
@@ -3430,8 +3437,18 @@
         }, {
           "@type" : "C_COMPLEX_OBJECT",
           "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
           "nodeId" : "at0025.1",
-          "attributes" : [ ],
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_EHR_URI",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
           "attributeTuples" : [ ]
         }, {
           "@type" : "C_COMPLEX_OBJECT",
