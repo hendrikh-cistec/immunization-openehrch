@@ -22,9 +22,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "4.1.1",
+      "sem_ver" : "0.5.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "5c26c31d08d2c4fd8f1f0b75d3fbc392",
+      "MD5-CAM-1.0.1" : "e5fd5882c49e065879e32e9ece86ef01",
       "PARENT:MD5-CAM-1.0.1" : "F2C3BD9252691BB3975C53648208D672"
     },
     "details" : {
@@ -36,7 +36,10 @@
           },
           "codeString" : "en"
         },
+        "purpose" : "To represent a persistent and managed vaccination record for an individual, aligned with the Swiss CH VACD Vaccination Record use case.\nThe template supports structured longitudinal storage of vaccination information in openEHR, including administered vaccine doses, product and batch details, administration details, dose sequence, source information, verification status and immunisation protocol information.\nIt is intended to support import from, persistence of and potential reconstruction of CH VACD-compatible vaccination data while keeping clinically relevant information queryable in openEHR.",
         "keywords" : [ ],
+        "use" : "Use this template to maintain a structured vaccination record for an individual over time.\nEach ACTION.medication entry represents one vaccination-related medication management event, typically one administered vaccine dose. Use the medication details, dosage, administration details, adverse reaction event, CH VACD source information and CH VACD immunisation protocol clusters to record the corresponding structured data according to the agreed CH VACD-to-openEHR mapping rules.\nUse this template when a persistent vaccination list is required for clinical review, patient-facing vaccination history, interoperability with CH VACD, decision support, reporting or long-term storage.\nWhere data are imported from CH VACD FHIR documents or Immunization resources, retain sufficient provenance and source metadata to support traceability, validation and, where required, reconstruction or re-export of CH VACD-compatible FHIR content.",
+        "misuse" : "Do not use this template as a generic encounter note or as the primary model for documenting a single clinical consultation. For encounter-specific vaccination documentation, use an appropriate encounter-based immunization administration template.\nDo not use this template to represent vaccination recommendations, planned vaccinations, prescriptions or orders that have not yet resulted in a documented vaccination-related event.\nDo not use this template to record allergy, intolerance, contraindication, risk factor or past disease information as if these were vaccination administration data. Use appropriate dedicated models for these concepts.\nDo not use this template as the only mechanism for preserving the original CH VACD FHIR document where legal, audit, validation or round-trip reconstruction requirements apply.\nDo not use this template for population-level immunisation registries or for aggregating vaccination data from multiple individuals.",
         "originalResourceUri" : { },
         "otherDetails" : { }
       },
@@ -3454,16 +3457,7 @@
           "rmTypeName" : "ELEMENT",
           "occurrences" : "0..1",
           "nodeId" : "at0025.1",
-          "attributes" : [ {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "value",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "DV_EHR_URI",
-              "attributes" : [ ],
-              "attributeTuples" : [ ]
-            } ]
-          } ],
+          "attributes" : [ ],
           "attributeTuples" : [ ]
         } ]
       } ],
