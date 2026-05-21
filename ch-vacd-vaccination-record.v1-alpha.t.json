@@ -22,9 +22,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "3.2.0",
+      "sem_ver" : "4.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "46ee62b6e77c9d1635e226369b7f79d7",
+      "MD5-CAM-1.0.1" : "d07e0f7f8f43439d32b12850b5d3a478",
       "PARENT:MD5-CAM-1.0.1" : "F2C3BD9252691BB3975C53648208D672"
     },
     "details" : {
@@ -1843,14 +1843,12 @@
             }, {
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "ELEMENT",
-              "occurrences" : "0..0",
               "nodeId" : "at0025.1",
               "attributes" : [ ],
               "attributeTuples" : [ ]
             }, {
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "ELEMENT",
-              "occurrences" : "0..0",
               "nodeId" : "at0024.1",
               "attributes" : [ ],
               "attributeTuples" : [ ]
@@ -1991,6 +1989,20 @@
             "text" : "Vaccination protocol",
             "description" : "Unique identifier for the medication order.",
             "comment" : "Comment: This data element allows for multiple occurrences to be defined more explicitly at run-time, if required."
+          },
+          "at0025.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0025.1",
+            "text" : "Dose number",
+            "description" : "The sequence number specific to the pathway step being recorded.",
+            "comment" : "For example: Vaccine sequence number."
+          },
+          "at0024.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0024.1",
+            "text" : "Note",
+            "description" : "Additional narrative about the activity or pathway step not captured in other fields, including details of any variance between the intended action and the action actually performed.",
+            "comment" : "For example: 'Patient was in radiology department', 'Accidental injection into blood vessel during IM administration'."
           }
         },
         "nb" : { },
@@ -2402,6 +2414,7 @@
         }, {
           "@type" : "C_COMPLEX_OBJECT",
           "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..1",
           "nodeId" : "at0150.1",
           "attributes" : [ {
             "@type" : "C_ATTRIBUTE",
@@ -3449,12 +3462,6 @@
               "attributeTuples" : [ ]
             } ]
           } ],
-          "attributeTuples" : [ ]
-        }, {
-          "@type" : "C_COMPLEX_OBJECT",
-          "rmTypeName" : "ELEMENT",
-          "nodeId" : "at0024.1",
-          "attributes" : [ ],
           "attributeTuples" : [ ]
         } ]
       } ],
