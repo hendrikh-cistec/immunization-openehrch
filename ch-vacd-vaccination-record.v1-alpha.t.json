@@ -22,9 +22,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "3.0.0",
+      "sem_ver" : "3.1.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "2dcc3807178ea4972e86c9c587b3f5d3",
+      "MD5-CAM-1.0.1" : "f1a3be5f2f7e8a410b13c61e7782b986",
       "PARENT:MD5-CAM-1.0.1" : "F2C3BD9252691BB3975C53648208D672"
     },
     "details" : {
@@ -2395,7 +2395,6 @@
         }, {
           "@type" : "C_COMPLEX_OBJECT",
           "rmTypeName" : "ELEMENT",
-          "occurrences" : "0..0",
           "nodeId" : "at0150.1",
           "attributes" : [ {
             "@type" : "C_ATTRIBUTE",
@@ -2408,6 +2407,9 @@
             }, {
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "DV_IDENTIFIER",
+              "defaultValue" : {
+                "@type" : "DV_IDENTIFIER"
+              },
               "attributes" : [ ],
               "attributeTuples" : [ ]
             } ]
@@ -2494,6 +2496,12 @@
             "text" : "Expiration date",
             "description" : "The expiry date and/or time of the medication or medication component, as given by the manufacturer or individual preparing the mixture.",
             "comment" : "Any other form of expiry date, such as time from production or depending on storage environment, can be inserted using a specific CLUSTER archetype in the Substance Details slot or added as part of the Description.\r\n For example: '2017-05-23'."
+          },
+          "at0133.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0133.1",
+            "text" : "Note",
+            "description" : "Narrative description of the medication or medication component where it is not possible to describe this fully using structured elements."
           }
         },
         "nb" : { },
